@@ -1,9 +1,25 @@
+@import helper._
+
+@(addFlightForm: Form[models.Flight])
+
 @main("Add Flight"){
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="well">
-                <h4>Add a new Flight</h4>
-            </div>
+    <h3>Add a new Flight</h3>
+    
+    @form(action = routes.HomeController.addFlightSubmit(), 'class -> "form-horizontal", 'role -> "form"){
+        @inputText(addFlightForm("flightID"), '_label -> "Flight ID", 'class -> "form-control")
+        @inputText(addFlightForm("flightDate"), '_label -> "Flight Date", 'class -> "form-control")
+        @inputText(addFlightForm("depTime"), '_label -> "Departure Time", 'class -> "form-control")
+        @inputText(addFlightForm("arrTime"), '_label -> "Arrival Time", 'class -> "form-control")
+        @inputText(addFlightForm("aircraftID"), '_label -> "Aircraft", 'class -> "form-control")
+        @inputText(addFlightForm("routeID"), '_label -> "Route", 'class -> "form-control")
+        
+        @inputText(addFlightForm("id"), '_label -> "", 'hidden -> "hidden")
+        
+        <div class="actions">
+            <input type="submit" value="Add Flight" class="btn btn-primary">
+            <a href="@routes.HomeController.index()"
+                <button class="btn btn-warning">Cancel</button>
+            </a>
         </div>
-    </div>
+    }
 }

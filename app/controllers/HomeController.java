@@ -17,13 +17,13 @@ import models.*;
  * to the application's home page.
  */
 public class HomeController extends Controller {
+    private FormFactory FormFactory;
 
-    /**
-     * An action that renders an HTML page with a welcome message.
-     * The configuration in the <code>routes</code> file means that
-     * this method will be called when the application receives a
-     * <code>GET</code> request with a path of <code>/</code>.
-     */
+    @Inject
+    public HomeController(FormFactory f){
+        this.FormFactory = f;
+    }
+
     public Result index() {
         return ok(index.render("Your new application is ready."));
     }
@@ -34,7 +34,43 @@ public class HomeController extends Controller {
     }
 
     public Result addFlight(){
-        return ok(addFlight.render());
+        Form<Flight> addFlightForm = FormFactory.form(Flight.class);
+        return ok(addFlight.render(addFlightForm));
+    }
+
+    public Result addFlightSubmit(){
+        Form<Flight> newFlightForm = FormFactory.form(Flight.class).bindFromRequest();
+        if(newFlightForm.hasErrors()){
+            return badRequest(addFlight.render(newFlightForm));
+        }
+        Flight newFlight = newFlightForm.get();
+        if(newFlight.getID()==null){
+            newFlight.save();
+        }
+        else if(newFlight.getID() != null) {
+            newFlight.update();
+        }
+        flash("success", "Flight " + newFlight.getID() + " has been created");
+        return redirect(controllers.routes.HomeController.flights());
+    }
+
+    public Result deleteFlight(int id){
+        Flight.find.ref(id).delete();
+        flash("success", "Flight has been deleted");
+        return redirect(routes.HomeController.flights());
+    }
+
+    @Transactional
+    public Result updateFlight(int id){
+        Flight f;
+        Form<Flight> flightForm;
+        try{
+            f = Flight.find.byId(id);
+            flightForm = formFactory.form(Flight.class).fill(p);
+        } catch (Exception ex) {
+            return badRequest("error");
+        }
+        return ok(addFlight.render(flightForm));
     }
 
 }

@@ -1,5 +1,11 @@
 @(flights: List[models.Flight])
 @main("Flight"){
+    @if(flash.containsKey("success")){
+        <div class="alert alert-success">
+            @flash.get("success")
+        </div>
+    }
+
     <table class="table table-bordered table-hover table-condensed">
         <thead>
         <tr>
@@ -20,6 +26,16 @@
                     <td>@f.getArrTime</td>
                     <td>@f.getDepTime</td>
                     <td>@f.getAircraftID</td>
+                    <td>
+                        <a href="@routes.HomeController.deleteFlight(f.getID)" class="btn-xs btn-danger" onclick="return confirmDel();">
+                            <span class="glyphicon glyphicon-trash"></span>
+                        </a>
+                    </td>
+                    <td>
+                        <a href="@routes.HomeController.updateFlight(f.getID)" class="btn-xs btn-danger">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                        </a>
+                    </td>
                 </tr>
             }
         </tbody>
@@ -30,4 +46,9 @@
         </a>
     </p>
     
+    <script>
+        function confirmDel(){
+            return confirm('Are you sure?');
+        }
+    </script>
 }
