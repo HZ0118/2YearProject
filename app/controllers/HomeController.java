@@ -28,10 +28,14 @@ public class HomeController extends Controller {
         return ok(index.render("Your new application is ready."));
     }
 
-    /*public Result flights() {
+    public Result flights() {
         List<Flight> flightsList = Flight.findAll();
-        return ok(flights.render(flightsList));
-    }*/
+        return ok(list.render(flightsList));
+    }
+
+    public Result addFlight(){
+        return ok(addFlight.render());
+    }
 
 }
 

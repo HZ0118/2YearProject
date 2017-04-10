@@ -6,6 +6,8 @@
 GET     /                           controllers.HomeController.index
 GET     /login                      controllers.LoginController.login
 POST    /loginSubmit                controllers.LoginController.loginSubmit
+GET     /flights                    controllers.HomeController.flights
+GET     /addflight                  controllers.HomeController.addFlight
 
 # An example controller showing how to use dependency injection
 GET     /count                      controllers.CountController.count
