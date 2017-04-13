@@ -1,0 +1,48 @@
+main {
+    
+}
+nav {
+    clear: both;
+    height: 70px;
+}
+
+nav img{
+    width: auto;
+    height: 70px;
+    float: left;
+}
+
+#mainNav{
+    width:auto;
+    float: left;
+    margin: 0 auto;
+    position: relative;
+    padding: 0;
+    
+}
+
+#rightNav {
+    float: right;
+}
+
+nav li {
+    display: inline;
+    float: left;
+}
+
+nav ul li a {
+    display: inline-block;
+    width: 100px;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    line-height: 70px;
+    border-right: 1px solid green;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+nav li:last-child a {
+    border-right: 0;
+}
