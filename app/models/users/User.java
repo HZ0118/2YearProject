@@ -66,13 +66,6 @@ public class User extends Model {
   public void setPassword(String password){
 	this.password = password;
   }
-
-  public static User getUserById(String id){
-    if(id == null)
-      return null;
-    else
-      return find.byId(id);
-  }
   
 }
 

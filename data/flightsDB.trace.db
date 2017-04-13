@@ -121,3 +121,9 @@ Caused by: java.lang.NumberFormatException: For input string: "Apr"
 	at org.h2.value.ValueTimestamp.parseTry(ValueTimestamp.java:140)
 	at org.h2.value.ValueTimestamp.parse(ValueTimestamp.java:120)
 	... 16 more
+2017-04-12 22:13:20 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Data conversion error converting "'' (FLIGHT: AIRCRAFT_ID INTEGER)"; SQL statement:
+INSERT INTO "PUBLIC"."FLIGHT"("FLIGHT_ID","FLIGHT_DATE","DEP_TIME","ARR_TIME","AIRCRAFT_ID","ROUTE_ID")VALUES(?,?,?,?,?,?) -- (?1, ?2, ?3, ?4, ?5, ?6) [22018-192]
+2017-04-12 22:13:20 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Data conversion error converting "'' (FLIGHT: AIRCRAFT_ID INTEGER)"; SQL statement:
+INSERT INTO "PUBLIC"."FLIGHT"("FLIGHT_ID","FLIGHT_DATE","DEP_TIME","ARR_TIME","AIRCRAFT_ID","ROUTE_ID")VALUES(?,?,?,?,?,?) -- (?1, ?2, ?3, ?4, ?5, ?6) [22018-192]

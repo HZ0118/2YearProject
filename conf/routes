@@ -10,8 +10,7 @@ GET     /flights                    controllers.HomeController.flights
 GET     /addflight                  controllers.HomeController.addFlight
 POST    /addFlightSubmit            controllers.HomeController.addFlightSubmit
 GET     /delFlight/:id              controllers.HomeController.deleteFlight(id: Integer)
-GET     /logout                     controllers.LoginController.logout
-
+GET     /updateFlight/:id           controllers.HomeController.updateFlight(id: Integer)
 # An example controller showing how to use dependency injection
 GET     /count                      controllers.CountController.count
 # An example controller showing how to write asynchronous code

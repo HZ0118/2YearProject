@@ -5,7 +5,7 @@
 
 create table flight (
   flight_id                     integer not null,
-  flight_date                   timestamp,
+  flight_date                   varchar(255),
   dep_time                      varchar(255),
   arr_time                      varchar(255),
   aircraft_id                   integer,

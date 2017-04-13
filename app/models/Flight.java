@@ -14,7 +14,7 @@ public class Flight extends Model {
     private int flightID;
 
     @Constraints.Required
-    private Date flightDate;
+    private String flightDate;
 
     @Constraints.Required
     private String depTime;
@@ -31,7 +31,7 @@ public class Flight extends Model {
     public Flight() {
     }
 
-    public Flight(int flightID, Date flightDate, String depTime, String arrTime,
+    public Flight(int flightID, String flightDate, String depTime, String arrTime,
     int aircraftID, int routeID) {
         this.flightID = flightID;
         this.flightDate = flightDate;
@@ -52,7 +52,7 @@ public class Flight extends Model {
         return flightID;
     }
 
-    public Date getDate(){
+    public String getDate(){
         return flightDate;
     }
 
@@ -77,7 +77,7 @@ public class Flight extends Model {
         this.flightID = flightID;
     }
 
-    public void setDate(Date flightDate){
+    public void setDate(String flightDate){
         this.flightDate = flightDate;
     }
 
