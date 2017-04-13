@@ -1,28 +1,33 @@
 main {
-    
+    clear: both;
 }
 nav {
-    clear: both;
     height: 70px;
+    background-color: cornflowerblue;
 }
 
 nav img{
     width: auto;
     height: 70px;
     float: left;
+    margin-left: 5px;
 }
 
 #mainNav{
     width:auto;
+    height: 70px;
     float: left;
     margin: 0 auto;
     position: relative;
     padding: 0;
-    
 }
 
 #rightNav {
+    width: auto;
     float: right;
+    margin: 0 auto;
+    position: relative;
+    padding: 0;
 }
 
 nav li {
@@ -34,13 +39,19 @@ nav ul li a {
     display: inline-block;
     width: 100px;
     text-decoration: none;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
     color: black;
     text-align: center;
-    line-height: 70px;
-    border-right: 1px solid green;
+    line-height: 60px;
+    border-right: 1px solid black;
+    padding-top: 10px;
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
+}
+
+nav ul li a:hover {
+    background-color: mediumblue;
 }
 
 nav li:last-child a {
