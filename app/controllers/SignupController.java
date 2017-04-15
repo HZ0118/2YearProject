@@ -12,6 +12,7 @@ import views.html.*;
 import models.users.*;
 
 public class SignupController extends Controller {
+    
     private FormFactory formFactory;
 
     @Inject

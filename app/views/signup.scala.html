@@ -3,6 +3,7 @@
 
 @import helper._
 @main("Add User", user) {
+    <div class="col-sm-4 col-sm-offset-4 text-center">
     <h3>Sign Up</h3>
     @if(addUserForm.hasGlobalErrors) {
         <p class="alert alert-warning">
@@ -10,11 +11,18 @@
         </p>
     }
 
-    @form(action = routes.SignupController.signupSubmit(),'class -> "form-horizontal", 'role -> "form"){
-        @inputText(addUserForm("name"), '_label -> "Username", 'class -> "form-control")
-        @inputText(addUserForm("email"), '_label -> "Email", 'class -> "form-control")
-        @inputText(addUserForm("password"), '_label -> "Password", 'class -> "form-control")
-        
+    @helper.form(action = controllers.routes.SignupController.signupSubmit()) {
+        <div class="form-group">
+            @inputText(addUserForm("name"), '_label -> "", 'class -> "form-control input-xs", 'placeholder -> "Username")
+        </div>
+        <div class="form-group">
+            @inputText(addUserForm("email"), '_label -> "",'class -> "form-control input-xs", 'placeholder -> "Email")
+        </div>
+        <div class="form-group">
+            @inputPassword(addUserForm("password"), '_label -> "",'class -> "form-control input-xs", 'placeholder -> "Password")
+        </div>
+
+    
         <div class="action">
             <input type="submit" value="Add User" class="btn btn-primary">
             <a href="@routes.HomeController.index()"
@@ -22,5 +30,5 @@
             </a>
         </div>
     }
-
+    </div>
 }
