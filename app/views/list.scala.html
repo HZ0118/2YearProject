@@ -1,5 +1,7 @@
-@(flights: List[models.Flight])
-@main("Flight"){
+@import models.users.User
+@(flights: List[models.Flight], user: User)
+
+@main("Flight", user){
     @if(flash.containsKey("success")){
         <div class="alert alert-success">
             @flash.get("success")

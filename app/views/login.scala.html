@@ -1,7 +1,8 @@
-@(loginForm: Form[models.users.Login])
+@import models.users.User
+@(loginForm: Form[models.users.Login], user: User)
 @import helper._
 
-@main("Login") {
+@main("Login", user) {
   <!-- HTML content for the index view -->
     <div class="col-xs-4">
         <h3>Sign in</h3>
