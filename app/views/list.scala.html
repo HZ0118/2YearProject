@@ -1,5 +1,5 @@
 @import models.users.User
-@(flights: List[models.Flight], user: User)
+@(flights: List[models.FlightSchedule], user: User)
 
 @main("Flight", user){
     @if(flash.containsKey("success")){
@@ -13,9 +13,9 @@
         <tr>
             <th>Flight</th>
             <th>Route</th>
-            <th>Departure Date</th>
-            <th>Arrival Time</th>
+            <th>Flight Date</th>
             <th>Departure Time</th>
+            <th>Arrival Time</th>
             <th>Aircraft</th>
         </tr>
         </thead>
@@ -23,18 +23,18 @@
             <h3>Flight List</h3>
             @for(f <- flights) {
                 <tr>
-                    <td class="numeric">@f.getID</td>
-                    <td class="numeric">@f.getRouteID</td>
-                    <td>@f.getDate</td>
-                    <td>@f.getArrTime</td>
+                    <td class="numeric">@f.getFlightID</td>
+                    <td class="numeric">@f.getRoutes</td>
+                    <td>@f.getFlightDate</td>
                     <td>@f.getDepTime</td>
-                    <td>@f.getAircraftID</td>
+                    <td>@f.getArrTime</td>
+                    <td>@f.getAircraft</td>
                     <td>
-                        <a href="@routes.HomeController.updateFlight(f.getID)" class="btn-xs btn-danger">
+                        <a href="@routes.FlightsController.updateFlight(f.getFlightID)" class="btn-xs btn-danger">
                         <span class="glyphicon glyphicon-pencil"></span></a>
                     </td>
                     <td>
-                        <a href="@routes.HomeController.deleteFlight(f.getID)" class="btn-xs btn-danger" onclick="return confirmDel();">
+                        <a href="@routes.FlightsController.deleteFlight(f.getFlightID)" class="btn-xs btn-danger" onclick="return confirmDel();">
                             <span class="glyphicon glyphicon-trash"></span>
                         </a>
                     </td>
@@ -43,7 +43,7 @@
         </tbody>
     </table>
     <p>
-        <a href="@routes.HomeController.addFlight()">
+        <a href="@routes.FlightsController.addFlight()">
             <button class="btn btn-primary">Add a Flight</button>
         </a>
     </p>

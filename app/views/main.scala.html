@@ -25,7 +25,7 @@
             </a>
             <ul id="mainNav">
                 <li @if(title =="Home"){class="active"}><a href="@routes.HomeController.index()">Home</a></li>
-                <li @if(title =="Flight"){class="active"}><a href="@routes.HomeController.flights()">Flight</a></li>
+                <li @if(title =="Flight"){class="active"}><a href="@routes.FlightsController.flights()">Flight</a></li>
                 <li @if(title =="Booking"){class="active"}><a href="#">My Bookings</a></li>
                 <li @if(title =="Discount"){class="active"}><a href="#">Discounts</a></li>
             </ul>

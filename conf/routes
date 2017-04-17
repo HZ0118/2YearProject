@@ -10,13 +10,13 @@ GET     /login                      controllers.LoginController.login
 POST    /loginSubmit                controllers.LoginController.loginSubmit
 
 # Flight Page
-GET     /flights                    controllers.HomeController.flights
+GET     /flights                    controllers.FlightsController.flights
 
 # Add Flights Page
-GET     /addflight                  controllers.HomeController.addFlight
-POST    /addFlightSubmit            controllers.HomeController.addFlightSubmit
-GET     /delFlight/:id              controllers.HomeController.deleteFlight(id: Integer)
-GET     /updateFlight/:id           controllers.HomeController.updateFlight(id: Integer)
+GET     /addflight                  controllers.FlightsController.addFlight
+POST    /addFlightSubmit            controllers.FlightsController.addFlightSubmit
+GET     /delFlight/:id              controllers.FlightsController.deleteFlight(id: Integer)
+GET     /updateFlight/:id           controllers.FlightsController.updateFlight(id: Integer)
 
 # Sign Up Page
 GET     /signup                     controllers.SignupController.signup
